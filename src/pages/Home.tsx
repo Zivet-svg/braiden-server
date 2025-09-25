@@ -23,8 +23,8 @@ function Home() {
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <h2>You're a NIGGER 😂</h2>
-            <p>Just kidding - you're a Faggot! 🎉</p>
+            <h2>You're a cool ahh jit 😂</h2>
+            <p>Just kidding - you're a warm ahh jit! 🎉</p>
             <button 
               className="btn btn-primary" 
               onClick={() => setShowPopup(false)}
