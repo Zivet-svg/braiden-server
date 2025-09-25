@@ -553,7 +553,8 @@ body {
 /* Media Apply Button */
 .media-apply-button {
   position: fixed;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 25%;
   background: var(--primary-blue);
   color: var(--white);
@@ -570,7 +571,7 @@ body {
 
 .media-apply-button:hover {
   background: #005bb5;
-  transform: translateY(-2px);
+  transform: translateX(-50%) translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
   color: var(--white);
   text-decoration: none;
