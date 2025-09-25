@@ -18,7 +18,7 @@ function Contact() {
               </h3>
               <div style={{marginBottom: '30px'}}>
                 <h4 style={{fontSize: '17px', fontWeight: '600', marginBottom: '8px', color: 'var(--text-primary)'}}>Email</h4>
-                <p style={{color: 'var(--text-secondary)', fontSize: '17px'}}>hello@mediaconnect.com</p>
+                <p style={{color: 'var(--text-secondary)', fontSize: '17px'}}>hello@durzivetmedia.com</p>
               </div>
               <div style={{marginBottom: '30px'}}>
                 <h4 style={{fontSize: '17px', fontWeight: '600', marginBottom: '8px', color: 'var(--text-primary)'}}>Phone</h4>

@@ -7,7 +7,7 @@ function Navigation() {
     <nav className="navbar">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          Media<span className="accent">Connect</span>
+          Dur<span className="accent">Zivet</span>Media
         </Link>
         <ul className="navbar-nav">
           <li className="nav-item">

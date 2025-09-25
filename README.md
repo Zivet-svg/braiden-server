@@ -1,4 +1,4 @@
-# MediaConnect
+# DurZivetMedia
 
 A professional media partnership platform built with React and Vite.
 

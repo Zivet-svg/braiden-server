@@ -10,7 +10,7 @@ function Home() {
           </div>
           
           <h1 className="hero-title">
-            Media<span className="accent">Connect</span>
+            Dur<span className="accent">Zivet</span>Media
           </h1>
           
           <p className="hero-subtitle">
