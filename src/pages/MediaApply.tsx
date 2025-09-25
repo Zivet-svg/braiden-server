@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { sendMediaApplyToDiscord, MediaApplyFormData } from '../utils/discordWebhook';
+import { sendMediaApplyToDiscord } from '../utils/discordWebhook';
+import type { MediaApplyFormData } from '../utils/discordWebhook';
 
 function MediaApply() {
   const [formData, setFormData] = useState({

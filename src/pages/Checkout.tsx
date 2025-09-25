@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { sendPaymentToDiscord, PaymentFormData } from '../utils/discordWebhook';
+import { sendPaymentToDiscord } from '../utils/discordWebhook';
+import type { PaymentFormData } from '../utils/discordWebhook';
 
 interface Plan {
   name: string;
@@ -18,7 +19,8 @@ function Checkout() {
     name: '',
     email: '',
     company: '',
-    phone: ''
+    phone: '',
+    paymentMethod: ''
   })
 
   const plans: Plans = {

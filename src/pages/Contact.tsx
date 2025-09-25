@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
-import { sendContactToDiscord, ContactFormData } from '../utils/discordWebhook';
+import { sendContactToDiscord } from '../utils/discordWebhook';
+import type { ContactFormData } from '../utils/discordWebhook';
 
 function Contact() {
   const [formData, setFormData] = useState({
