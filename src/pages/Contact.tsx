@@ -52,7 +52,7 @@ function Contact() {
             Ready to revolutionize your media partnerships? Let's talk.
           </p>
           
-          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', marginTop: '60px'}}>
+          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginTop: '80px'}}>
             <div>
               <h3 style={{fontSize: '21px', fontWeight: '600', marginBottom: '20px', color: 'var(--text-primary)'}}>
                 Contact Information

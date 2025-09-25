@@ -71,7 +71,7 @@ function MediaApply() {
             <p className="section-subtitle">Tell us about your content and audience</p>
           </div>
           
-          <div className="contact-content">
+          <div className="contact-content" style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginTop: '80px'}}>
             <div className="contact-info">
               <h3 style={{fontSize: '21px', fontWeight: '600', marginBottom: '20px', color: 'var(--text-primary)'}}>
                 Why Partner With Us?

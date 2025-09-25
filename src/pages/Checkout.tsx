@@ -100,7 +100,7 @@ Please send payment and contact us with your transaction details.`)
             Select the perfect plan for your business needs
           </p>
           
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', marginBottom: '60px'}}>
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px', marginBottom: '80px', marginTop: '60px'}}>
             {Object.entries(plans).map(([key, plan]) => (
               <div 
                 key={key}
@@ -130,12 +130,12 @@ Please send payment and contact us with your transaction details.`)
           </div>
 
           <div style={{maxWidth: '600px', margin: '0 auto'}}>
-            <h3 style={{fontSize: '24px', fontWeight: '600', marginBottom: '30px', color: 'var(--white)', textAlign: 'center'}}>
+            <h3 style={{fontSize: '24px', fontWeight: '600', marginBottom: '40px', color: 'var(--white)', textAlign: 'center'}}>
               Complete Your Order
             </h3>
             
-            <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
-              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px'}}>
+            <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', gap: '24px'}}>
+              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px'}}>
                 <div>
                   <label style={{display: 'block', marginBottom: '8px', color: 'var(--white)', fontSize: '14px', fontWeight: '500'}}>
                     Full Name *
@@ -191,7 +191,7 @@ Please send payment and contact us with your transaction details.`)
                 </div>
               </div>
 
-              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px'}}>
+              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px'}}>
                 <div>
                   <label style={{display: 'block', marginBottom: '8px', color: 'var(--white)', fontSize: '14px', fontWeight: '500'}}>
                     Company Name
