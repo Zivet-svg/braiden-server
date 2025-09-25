@@ -552,7 +552,7 @@ body {
 
 /* Media Apply Button */
 .media-apply-button {
-  position: fixed;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 25%;
