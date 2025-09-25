@@ -50,7 +50,23 @@ function Checkout() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Handle form submission here
+    
+    // Show payment options
+    const plan = plans[selectedPlan as keyof Plans]
+    const price = typeof plan.price === 'number' ? plan.price : 'Custom'
+    
+    alert(`Payment Options for ${plan.name} Plan ($${price}):
+    
+Litecoin (LTC) Payment:
+Address: LgfAghENbuhVtgYrBh8trLw6n9AKAVNZFF
+Amount: $${price} USD equivalent in LTC
+
+PayPal Payment:
+Email: yeetdab2010@gmail.com
+Amount: $${price} USD
+
+Please send payment and contact us with your transaction details.`)
+    
     console.log('Form submitted:', { plan: selectedPlan, ...formData })
   }
 
@@ -223,6 +239,20 @@ function Checkout() {
                   <span style={{color: 'var(--primary-blue)', fontWeight: '600', fontSize: '18px'}}>
                     {typeof plans[selectedPlan as keyof Plans].price === 'number' ? `$${plans[selectedPlan as keyof Plans].price}/${plans[selectedPlan as keyof Plans].period}` : 'Contact Sales'}
                   </span>
+                </div>
+              </div>
+
+              <div style={{marginTop: '20px', padding: '20px', backgroundColor: '#2c2c2e', borderRadius: '8px'}}>
+                <h4 style={{color: 'var(--white)', marginBottom: '15px', fontSize: '16px'}}>Payment Information</h4>
+                <div style={{marginBottom: '15px'}}>
+                  <h5 style={{color: 'var(--primary-blue)', marginBottom: '8px', fontSize: '14px'}}>Litecoin (LTC) Payment:</h5>
+                  <p style={{color: '#a1a1a6', fontSize: '12px', marginBottom: '5px'}}>Address: <code style={{backgroundColor: '#1c1c1e', padding: '2px 6px', borderRadius: '4px', color: 'var(--white)'}}>LgfAghENbuhVtgYrBh8trLw6n9AKAVNZFF</code></p>
+                  <p style={{color: '#a1a1a6', fontSize: '12px'}}>Send equivalent USD amount in LTC</p>
+                </div>
+                <div>
+                  <h5 style={{color: 'var(--primary-blue)', marginBottom: '8px', fontSize: '14px'}}>PayPal Payment:</h5>
+                  <p style={{color: '#a1a1a6', fontSize: '12px', marginBottom: '5px'}}>Email: <code style={{backgroundColor: '#1c1c1e', padding: '2px 6px', borderRadius: '4px', color: 'var(--white)'}}>yeetdab2010@gmail.com</code></p>
+                  <p style={{color: '#a1a1a6', fontSize: '12px'}}>Send exact USD amount via PayPal</p>
                 </div>
               </div>
 
