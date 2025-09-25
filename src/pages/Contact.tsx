@@ -1,4 +1,3 @@
-import React from 'react'
 
 function Contact() {
   return (
@@ -78,7 +77,7 @@ function Contact() {
                 <div>
                   <textarea 
                     placeholder="Your message"
-                    rows="4"
+                    rows={4}
                     style={{
                       width: '100%',
                       padding: '12px 16px',
