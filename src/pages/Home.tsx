@@ -22,7 +22,7 @@ function Home() {
           
           <div className="hero-buttons">
             <a href="/features" className="btn btn-primary btn-lg">Learn more</a>
-            <a href="/pricing" className="btn btn-outline btn-lg">View pricing</a>
+            <a href="/checkout" className="btn btn-outline btn-lg">Get Started</a>
           </div>
           
           {/* Stats */}

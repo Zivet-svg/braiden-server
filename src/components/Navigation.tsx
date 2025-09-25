@@ -36,7 +36,7 @@ function Navigation() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/pricing" className="btn btn-primary">Get Started</Link>
+            <Link to="/checkout" className="btn btn-primary">Get Started</Link>
           </li>
         </ul>
       </div>

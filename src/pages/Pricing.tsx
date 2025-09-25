@@ -25,7 +25,7 @@ function Pricing() {
                 <li style={{padding: '8px 0', borderBottom: '1px solid var(--border-light)'}}>✓ Email support</li>
                 <li style={{padding: '8px 0', borderBottom: '1px solid var(--border-light)'}}>✓ Basic analytics</li>
               </ul>
-              <a href="#" className="btn btn-outline btn-lg" style={{width: '100%'}}>Get Started</a>
+              <a href="/checkout" className="btn btn-outline btn-lg" style={{width: '100%'}}>Get Started</a>
             </div>
             
             <div className="feature-card" style={{border: '2px solid var(--primary-blue)'}}>
@@ -41,7 +41,7 @@ function Pricing() {
                 <li style={{padding: '8px 0', borderBottom: '1px solid var(--border-light)'}}>✓ Advanced analytics</li>
                 <li style={{padding: '8px 0', borderBottom: '1px solid var(--border-light)'}}>✓ Custom integrations</li>
               </ul>
-              <a href="#" className="btn btn-primary btn-lg" style={{width: '100%'}}>Get Started</a>
+              <a href="/checkout" className="btn btn-primary btn-lg" style={{width: '100%'}}>Get Started</a>
             </div>
             
             <div className="feature-card">
@@ -58,7 +58,7 @@ function Pricing() {
                 <li style={{padding: '8px 0', borderBottom: '1px solid var(--border-light)'}}>✓ White-label solution</li>
                 <li style={{padding: '8px 0', borderBottom: '1px solid var(--border-light)'}}>✓ On-premise deployment</li>
               </ul>
-              <a href="#" className="btn btn-outline btn-lg" style={{width: '100%'}}>Contact Sales</a>
+              <a href="/checkout" className="btn btn-outline btn-lg" style={{width: '100%'}}>Contact Sales</a>
             </div>
           </div>
         </div>
