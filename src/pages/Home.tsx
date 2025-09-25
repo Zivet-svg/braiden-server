@@ -1,7 +1,39 @@
 
+import { useState } from 'react';
+
 function Home() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleClownClick = () => {
+    setShowPopup(true);
+  };
+
   return (
     <div className="page">
+      {/* Fun Clown Button */}
+      <button 
+        className="clown-button" 
+        onClick={handleClownClick}
+        title="Click me for a surprise!"
+      >
+        🤡
+      </button>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>You're a clown! 😂</h2>
+            <p>Just kidding - you're awesome! 🎉</p>
+            <button 
+              className="btn btn-primary" 
+              onClick={() => setShowPopup(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
