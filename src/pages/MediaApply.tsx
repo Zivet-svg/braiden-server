@@ -121,7 +121,11 @@ function MediaApply() {
                 <div>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Email Address *"
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -139,6 +143,10 @@ function MediaApply() {
                 
                 <div>
                   <select 
+                    name="platform"
+                    value={formData.platform}
+                    onChange={handleInputChange}
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -167,7 +175,11 @@ function MediaApply() {
                 <div>
                   <input 
                     type="number" 
+                    name="followers"
+                    value={formData.followers}
+                    onChange={handleInputChange}
                     placeholder="Follower Count *"
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -186,7 +198,11 @@ function MediaApply() {
                 <div>
                   <input 
                     type="text" 
+                    name="handle"
+                    value={formData.handle}
+                    onChange={handleInputChange}
                     placeholder="Social Media Handle * (e.g., @yourhandle)"
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -204,6 +220,10 @@ function MediaApply() {
                 
                 <div>
                   <select 
+                    name="niche"
+                    value={formData.niche}
+                    onChange={handleInputChange}
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -235,6 +255,9 @@ function MediaApply() {
                 
                 <div>
                   <textarea 
+                    name="experience"
+                    value={formData.experience}
+                    onChange={handleInputChange}
                     placeholder="Previous Brand Partnership Experience (optional)"
                     rows={4}
                     style={{
@@ -256,6 +279,9 @@ function MediaApply() {
                 
                 <div>
                   <textarea 
+                    name="goals"
+                    value={formData.goals}
+                    onChange={handleInputChange}
                     placeholder="Partnership Goals (optional)"
                     rows={3}
                     style={{
