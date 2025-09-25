@@ -44,34 +44,67 @@ function MediaApply() {
               </div>
             </div>
             
-            <div className="contact-form">
-              <form>
-                <div className="form-group">
-                  <label htmlFor="name">Full Name *</label>
+            <div>
+              <h3 style={{fontSize: '21px', fontWeight: '600', marginBottom: '20px', color: 'var(--text-primary)'}}>
+                Media Partner Application
+              </h3>
+              <form style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+                <div>
                   <input 
                     type="text" 
-                    id="name" 
-                    name="name" 
-                    required 
-                    placeholder="Your full name"
+                    placeholder="Full Name *"
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
                   />
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="email">Email Address *</label>
+                <div>
                   <input 
                     type="email" 
-                    id="email" 
-                    name="email" 
-                    required 
-                    placeholder="your@email.com"
+                    placeholder="Email Address *"
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
                   />
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="platform">Primary Platform *</label>
-                  <select id="platform" name="platform" required>
-                    <option value="">Select your main platform</option>
+                <div>
+                  <select 
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease',
+                      backgroundColor: '#1c1c1e',
+                      color: 'var(--white)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
+                  >
+                    <option value="">Select your main platform *</option>
                     <option value="instagram">Instagram</option>
                     <option value="youtube">YouTube</option>
                     <option value="tiktok">TikTok</option>
@@ -81,32 +114,62 @@ function MediaApply() {
                   </select>
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="followers">Follower Count *</label>
+                <div>
                   <input 
                     type="number" 
-                    id="followers" 
-                    name="followers" 
-                    required 
-                    placeholder="e.g., 10000"
+                    placeholder="Follower Count *"
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
                   />
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="handle">Social Media Handle *</label>
+                <div>
                   <input 
                     type="text" 
-                    id="handle" 
-                    name="handle" 
-                    required 
-                    placeholder="@yourhandle"
+                    placeholder="Social Media Handle * (e.g., @yourhandle)"
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
                   />
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="niche">Content Niche *</label>
-                  <select id="niche" name="niche" required>
-                    <option value="">Select your content niche</option>
+                <div>
+                  <select 
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease',
+                      backgroundColor: '#1c1c1e',
+                      color: 'var(--white)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
+                  >
+                    <option value="">Select your content niche *</option>
                     <option value="lifestyle">Lifestyle</option>
                     <option value="fashion">Fashion</option>
                     <option value="tech">Technology</option>
@@ -120,27 +183,53 @@ function MediaApply() {
                   </select>
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="experience">Previous Brand Partnership Experience</label>
+                <div>
                   <textarea 
-                    id="experience" 
-                    name="experience" 
+                    placeholder="Previous Brand Partnership Experience (optional)"
                     rows={4}
-                    placeholder="Tell us about any previous brand partnerships or sponsored content you've done..."
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease',
+                      resize: 'vertical',
+                      minHeight: '100px'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
                   ></textarea>
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="goals">Partnership Goals</label>
+                <div>
                   <textarea 
-                    id="goals" 
-                    name="goals" 
+                    placeholder="Partnership Goals (optional)"
                     rows={3}
-                    placeholder="What are you looking to achieve through brand partnerships?"
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: '1px solid var(--border-light)',
+                      borderRadius: '8px',
+                      fontSize: '17px',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      transition: 'border-color 0.3s ease',
+                      resize: 'vertical',
+                      minHeight: '80px'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-blue)'}
+                    onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
                   ></textarea>
                 </div>
                 
-                <button type="submit" className="btn btn-primary btn-lg">
+                <button 
+                  type="submit" 
+                  className="btn btn-primary btn-lg"
+                  style={{marginTop: '10px'}}
+                >
                   Submit Application
                 </button>
               </form>
