@@ -1,4 +1,49 @@
+import { useState } from 'react';
+import { sendMediaApplyToDiscord, MediaApplyFormData } from '../utils/discordWebhook';
+
 function MediaApply() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    platform: '',
+    followers: '',
+    handle: '',
+    niche: '',
+    experience: '',
+    goals: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const success = await sendMediaApplyToDiscord(formData as MediaApplyFormData);
+      if (success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', platform: '', followers: '', handle: '', niche: '', experience: '', goals: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="page">
       {/* Hero Section */}
@@ -48,11 +93,15 @@ function MediaApply() {
               <h3 style={{fontSize: '21px', fontWeight: '600', marginBottom: '20px', color: 'var(--text-primary)'}}>
                 Media Partner Application
               </h3>
-              <form style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+              <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
                 <div>
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     placeholder="Full Name *"
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -225,12 +274,25 @@ function MediaApply() {
                   ></textarea>
                 </div>
                 
+                {submitStatus === 'success' && (
+                  <div style={{color: '#00ff00', fontSize: '16px', textAlign: 'center'}}>
+                    ✅ Application submitted successfully! We'll review it and get back to you soon.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div style={{color: '#ff4444', fontSize: '16px', textAlign: 'center'}}>
+                    ❌ Error submitting application. Please try again.
+                  </div>
+                )}
+                
                 <button 
                   type="submit" 
                   className="btn btn-primary btn-lg"
                   style={{marginTop: '10px'}}
+                  disabled={isSubmitting}
                 >
-                  Submit Application
+                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </button>
               </form>
             </div>

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { sendPaymentToDiscord, PaymentFormData } from '../utils/discordWebhook';
 
 interface Plan {
   name: string;
@@ -48,13 +49,29 @@ function Checkout() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
-    // Show payment options
+    // Send to Discord
     const plan = plans[selectedPlan as keyof Plans]
     const price = typeof plan.price === 'number' ? plan.price : 'Custom'
     
+    const paymentData: PaymentFormData = {
+      name: formData.name,
+      email: formData.email,
+      plan: `${plan.name} - $${price}`,
+      paymentMethod: formData.paymentMethod,
+      ltcAddress: 'LgfAghENbuhVtgYrBh8trLw6n9AKAVNZFF',
+      paypalEmail: 'yeetdab2010@gmail.com'
+    };
+
+    try {
+      await sendPaymentToDiscord(paymentData);
+    } catch (error) {
+      console.error('Error sending payment to Discord:', error);
+    }
+    
+    // Show payment options
     alert(`Payment Options for ${plan.name} Plan ($${price}):
     
 Litecoin (LTC) Payment:

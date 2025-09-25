@@ -1,5 +1,5 @@
 // Discord webhook utility
-const DISCORD_WEBHOOK_URL = 'YOUR_DISCORD_WEBHOOK_URL_HERE'; // Replace with your actual webhook URL
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1420665966806827111/oFITn5Ac22EK7b_kZoQr9PJQTGy1Gl76Hh3ezKR-YcTJ3eWRL_CEoVSIxPPUCnNFBf0-';
 
 export interface ContactFormData {
   name: string;
@@ -16,6 +16,15 @@ export interface MediaApplyFormData {
   niche: string;
   experience?: string;
   goals?: string;
+}
+
+export interface PaymentFormData {
+  name: string;
+  email: string;
+  plan: string;
+  paymentMethod: string;
+  ltcAddress?: string;
+  paypalEmail?: string;
 }
 
 export const sendContactToDiscord = async (formData: ContactFormData) => {
@@ -112,6 +121,66 @@ export const sendMediaApplyToDiscord = async (formData: MediaApplyFormData) => {
     timestamp: new Date().toISOString(),
     footer: {
       text: "DurZivetMedia Media Application"
+    }
+  };
+
+  try {
+    const response = await fetch(DISCORD_WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        embeds: [embed]
+      })
+    });
+
+    return response.ok;
+  } catch (error) {
+    console.error('Error sending to Discord:', error);
+    return false;
+  }
+};
+
+export const sendPaymentToDiscord = async (formData: PaymentFormData) => {
+  const embed = {
+    title: "💳 New Payment Submission",
+    color: 0xff6b35, // Orange color for payments
+    fields: [
+      {
+        name: "Name",
+        value: formData.name,
+        inline: true
+      },
+      {
+        name: "Email",
+        value: formData.email,
+        inline: true
+      },
+      {
+        name: "Plan",
+        value: formData.plan,
+        inline: true
+      },
+      {
+        name: "Payment Method",
+        value: formData.paymentMethod,
+        inline: true
+      },
+      {
+        name: "LTC Address",
+        value: formData.ltcAddress || "Not provided",
+        inline: false
+      },
+      {
+        name: "PayPal Email",
+        value: formData.paypalEmail || "Not provided",
+        inline: false
+      }
+    ],
+    timestamp: new Date().toISOString(),
+    footer: {
+      text: "DurZivetMedia Payment Form"
     }
   };
 

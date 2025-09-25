@@ -77,11 +77,15 @@ function Contact() {
               <h3 style={{fontSize: '21px', fontWeight: '600', marginBottom: '20px', color: 'var(--text-primary)'}}>
                 Send us a message
               </h3>
-              <form style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+              <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
                 <div>
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     placeholder="Your name"
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -99,7 +103,11 @@ function Contact() {
                 <div>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Your email"
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -116,8 +124,12 @@ function Contact() {
                 </div>
                 <div>
                   <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Your message"
                     rows={4}
+                    required
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -133,12 +145,25 @@ function Contact() {
                     onBlur={(e) => e.target.style.borderColor = 'var(--border-light)'}
                   />
                 </div>
+                {submitStatus === 'success' && (
+                  <div style={{color: '#00ff00', fontSize: '16px', textAlign: 'center'}}>
+                    ✅ Message sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div style={{color: '#ff4444', fontSize: '16px', textAlign: 'center'}}>
+                    ❌ Error sending message. Please try again.
+                  </div>
+                )}
+                
                 <button 
                   type="submit"
                   className="btn btn-primary btn-lg"
                   style={{alignSelf: 'flex-start'}}
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
