@@ -5,6 +5,7 @@ import Features from './pages/Features'
 import Pricing from './pages/Pricing'
 import Contact from './pages/Contact'
 import Checkout from './pages/Checkout'
+import MediaApply from './pages/MediaApply'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/media-apply" element={<MediaApply />} />
         </Routes>
       </div>
     </Router>
