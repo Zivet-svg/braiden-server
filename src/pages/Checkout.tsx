@@ -1,4 +1,15 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+
+interface Plan {
+  name: string;
+  price: number | string;
+  period: string;
+  features: string[];
+}
+
+interface Plans {
+  [key: string]: Plan;
+}
 
 function Checkout() {
   const [selectedPlan, setSelectedPlan] = useState('professional')
@@ -9,7 +20,7 @@ function Checkout() {
     phone: ''
   })
 
-  const plans = {
+  const plans: Plans = {
     starter: {
       name: 'Starter',
       price: 99,
@@ -30,14 +41,14 @@ function Checkout() {
     }
   }
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     // Handle form submission here
     console.log('Form submitted:', { plan: selectedPlan, ...formData })
@@ -202,15 +213,15 @@ function Checkout() {
               <div style={{marginTop: '20px', padding: '20px', backgroundColor: '#2c2c2e', borderRadius: '8px'}}>
                 <h4 style={{color: 'var(--white)', marginBottom: '10px', fontSize: '16px'}}>Order Summary</h4>
                 <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '10px'}}>
-                  <span style={{color: '#a1a1a6'}}>{plans[selectedPlan].name} Plan</span>
+                  <span style={{color: '#a1a1a6'}}>{plans[selectedPlan as keyof Plans].name} Plan</span>
                   <span style={{color: 'var(--white)', fontWeight: '600'}}>
-                    {typeof plans[selectedPlan].price === 'number' ? `$${plans[selectedPlan].price}/${plans[selectedPlan].period}` : 'Contact Sales'}
+                    {typeof plans[selectedPlan as keyof Plans].price === 'number' ? `$${plans[selectedPlan as keyof Plans].price}/${plans[selectedPlan as keyof Plans].period}` : 'Contact Sales'}
                   </span>
                 </div>
                 <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '20px', paddingTop: '10px', borderTop: '1px solid #2c2c2e'}}>
                   <span style={{color: 'var(--white)', fontWeight: '600', fontSize: '18px'}}>Total</span>
                   <span style={{color: 'var(--primary-blue)', fontWeight: '600', fontSize: '18px'}}>
-                    {typeof plans[selectedPlan].price === 'number' ? `$${plans[selectedPlan].price}/${plans[selectedPlan].period}` : 'Contact Sales'}
+                    {typeof plans[selectedPlan as keyof Plans].price === 'number' ? `$${plans[selectedPlan as keyof Plans].price}/${plans[selectedPlan as keyof Plans].period}` : 'Contact Sales'}
                   </span>
                 </div>
               </div>
